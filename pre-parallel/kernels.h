@@ -1,6 +1,8 @@
 #ifndef KERNELS_H
 #define KERNELS_H
 
+#include <cuda_runtime.h>
+
 __global__ void forward_relu_layer_kernel(const float *input, const float *weights, const float *bias, float *pre_activation, float *activation, int input_size, int output_size);
 __global__ void forward_linear_layer_kernel(const float *input, const float *weights, const float *bias, float *output, int input_size, int output_size);
 __global__ void softmax_output_delta_kernel(const float *logits, const float *labels, float *probabilities, float *delta, float *loss, int classes);
